@@ -1,4 +1,4 @@
-import { Container, Title } from '@screens/GroupsStyles'
+import { Container, Title } from '@styles/screens/GroupsStyles'
 
 export function Groups() {
   return (
