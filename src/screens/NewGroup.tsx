@@ -18,7 +18,7 @@ export function NewGroup({ item }: NewGroupProps) {
           title='Nova turma'
           subtitle='Crie uma turma para adicionar pessoas'
         />
-        <Input />
+        <Input placeholder='Nome da turma' />
         <Button title='Criar' />
       </Content>
     </Container>
