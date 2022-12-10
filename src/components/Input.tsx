@@ -5,8 +5,14 @@ import { Container } from '@styles/components/InputStyles'
 
 type InputProps = TextInputProps & {}
 
-export function Input({ ...rest }: InputProps) {
+export function Input({ placeholder, ...rest }: InputProps) {
   const { COLORS } = useTheme()
 
-  return <Container {...rest} placeholderTextColor={COLORS.GRAY_300} />
+  return (
+    <Container
+      {...rest}
+      placeholderTextColor={COLORS.GRAY_300}
+      placeholder={placeholder}
+    />
+  )
 }
