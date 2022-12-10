@@ -11,7 +11,7 @@ type ButtonProps = TouchableOpacityProps & {
   title: string
 }
 
-export function Button({ type = 'success', title, ...rest }: ButtonProps) {
+export function Button({ type, title, ...rest }: ButtonProps) {
   return (
     <Container type={type} {...rest}>
       <ButtonText>{title}</ButtonText>

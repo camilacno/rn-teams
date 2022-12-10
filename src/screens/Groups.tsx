@@ -1,14 +1,17 @@
 import { FlatList } from 'react-native'
 import { useState } from 'react'
-import { Header } from '@components/Header'
-import { Highlight } from '@components/Highlight'
-import { GroupCard } from '@components/GroupCard'
+import {
+  Header,
+  Highlight,
+  GroupCard,
+  EmptyList,
+  Button,
+} from '@components/index'
+
 import { Container } from '@styles/screens/GroupsStyles'
-import { EmptyList } from '@components/EmptyList'
-import { Button } from '@components/Button'
 
 export function Groups() {
-  const [groups, setGroups] = useState<string[]>([])
+  const [groups, setGroups] = useState<string[]>(['Turma 1'])
 
   return (
     <Container>
