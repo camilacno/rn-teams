@@ -5,6 +5,7 @@ import { Highlight } from '@components/Highlight'
 import { GroupCard } from '@components/GroupCard'
 import { Container } from '@styles/screens/GroupsStyles'
 import { EmptyList } from '@components/EmptyList'
+import { Button } from '@components/Button'
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([])
@@ -24,6 +25,7 @@ export function Groups() {
         )}
         contentContainerStyle={groups.length === 0 && { flex: 1 }}
       />
+      <Button title='Criar nova turma' />
     </Container>
   )
 }
