@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  GroupTitle,
-  UsersIcon,
-} from '@styles/components/GroupCardStyles'
+import { Container, GroupTitle, UsersIcon } from './GroupCardStyles'
 import { TouchableOpacityProps } from 'react-native'
 
 type GroupCardProps = TouchableOpacityProps & {

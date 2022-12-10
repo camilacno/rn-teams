@@ -1,10 +1,5 @@
-import {
-  Container,
-  Logo,
-  BackIcon,
-  BackButton,
-} from '@styles/components/HeaderStyles'
 import logoImg from '@assets/logo.png'
+import { Container, Logo, BackIcon, BackButton } from './HeaderStyles'
 
 type HeaderProps = {
   showBackButton?: boolean

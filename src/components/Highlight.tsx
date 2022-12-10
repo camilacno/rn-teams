@@ -1,4 +1,4 @@
-import { Container, Subtitle, Title } from '@styles/components/HighlightStyles'
+import { Container, Subtitle, Title } from './HighlightStyles'
 
 type HighlightProps = {
   title: string

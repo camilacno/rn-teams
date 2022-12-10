@@ -1,4 +1,4 @@
-import { Container, LoadingIndicator } from '@styles/components/LoadingStyles'
+import { Container, LoadingIndicator } from './LoadingStyles'
 
 export function Loading() {
   return (

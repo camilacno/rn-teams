@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Message } from '@styles/components/EmptyListStyles'
+import { Container, Message } from './EmptyListStyles'
 
 type EmptyListProps = {
   message: string

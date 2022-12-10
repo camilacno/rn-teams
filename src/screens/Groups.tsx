@@ -8,7 +8,7 @@ import {
   Button,
 } from '@components/index'
 
-import { Container } from '@styles/screens/GroupsStyles'
+import { Container } from './GroupsStyles'
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>(['Turma 1'])
