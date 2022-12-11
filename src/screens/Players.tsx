@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header, Highlight, Input } from '@components/index'
-import { Container } from './PlayersStyles'
+import { Header, Highlight, Input, ButtonIcon } from '@components/index'
+import { Container, Form } from './PlayersStyles'
 
 export function Players() {
   return (
@@ -10,8 +10,10 @@ export function Players() {
         title='Nome da turma'
         subtitle='Adicione a galera e separe os times'
       />
-
-      <Input placeholder='Nome do participante' />
+      <Form>
+        <Input placeholder='Nome do participante' autoCorrect={false} />
+        <ButtonIcon icon='add' type='add' />
+      </Form>
     </Container>
   )
 }
