@@ -1,4 +1,4 @@
-import { Link, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import logoImg from '@assets/logo.png'
 import { Container, Logo, BackIcon, BackButton } from './HeaderStyles'
 
@@ -11,7 +11,7 @@ export function Header({ showBackButton = false }: HeaderProps) {
   const navigation = useNavigation()
 
   function handleNavigateToHome() {
-    navigation.goBack()
+    navigation.navigate('groups')
   }
   return (
     <Container>
@@ -20,9 +20,7 @@ export function Header({ showBackButton = false }: HeaderProps) {
           <BackIcon />
         </BackButton>
       )}
-      <Link to="/groups">
-        <Logo source={logoImg} />
-      </Link>
+      <Logo source={logoImg} />
     </Container>
   )
 }

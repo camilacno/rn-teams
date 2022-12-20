@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FlatList } from 'react-native'
+import { useRoute } from '@react-navigation/native'
 import {
   Header,
   Highlight,
@@ -11,6 +12,10 @@ import {
   Button,
 } from '@components/index'
 import { Container, Form, HeaderList, PlayersCounter } from './PlayersStyles'
+
+type RouteParams = {
+  group: string
+}
 
 export function Players() {
   const TEAMS = ['Time 1', 'Time 2', 'Time 3']
@@ -28,16 +33,16 @@ export function Players() {
     'Sueli',
   ])
 
+  const route = useRoute()
+  const { group } = route.params as RouteParams
+
   return (
     <Container>
       <Header showBackButton />
-      <Highlight
-        title='Nome da turma'
-        subtitle='Adicione a galera e separe os times'
-      />
+      <Highlight title={group} subtitle="Adicione a galera e separe os times" />
       <Form>
-        <Input placeholder='Nome do participante' autoCorrect={false} />
-        <ButtonIcon icon='add' type='add' />
+        <Input placeholder="Nome do participante" autoCorrect={false} />
+        <ButtonIcon icon="add" type="add" />
       </Form>
 
       <HeaderList>
@@ -70,11 +75,11 @@ export function Players() {
           players.length === 0 && { flex: 1 },
         ]}
         ListEmptyComponent={() => (
-          <EmptyList message='Sem jogadores adicionados. Adicione jogadores ao time!' />
+          <EmptyList message="Sem jogadores adicionados. Adicione jogadores ao time!" />
         )}
       />
 
-      <Button title='Remover turma' type='danger' />
+      <Button title="Remover turma" type="danger" />
     </Container>
   )
 }
