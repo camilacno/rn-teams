@@ -14,11 +14,11 @@ export function PlayerCard({ name, onRemove }: PlayerCardProps) {
 
   return (
     <Container>
-      <PlayerIcon name='person' />
+      <PlayerIcon name="person" />
       <PlayerName>{name}</PlayerName>
       <ButtonIcon
-        icon='close'
-        type='delete'
+        icon="close"
+        type="delete"
         onPress={() => handleRemovePlayer(name)}
       />
     </Container>

@@ -20,16 +20,15 @@ export const Container = styled(TouchableOpacity)`
 export const Icon = styled(MaterialIcons).attrs<ButtonIconProps>(
   ({ theme, type }) => ({
     size: 24,
-    color: type === 'add' ? theme.COLORS.GREEN_700 : theme.COLORS.RED,
-    // color: () => {
-    //   switch (type) {
-    //     case 'add':
-    //       return theme.COLORS.GREEN_700
-    //     case 'delete':
-    //       return theme.COLORS.RED_DARK
-    //     default:
-    //       return theme.COLORS.GREEN_700
-    //   }
-    // },
+    color: (() => {
+      switch (type) {
+        case 'add':
+          return theme.COLORS.GREEN_700
+        case 'delete':
+          return theme.COLORS.RED_DARK
+        default:
+          return theme.COLORS.GREEN_700
+      }
+    })(),
   })
 )``
