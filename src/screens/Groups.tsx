@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { FlatList } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useFocusEffect } from '@react-navigation/native'
+
 import {
   Header,
   Highlight,
@@ -10,9 +11,26 @@ import {
 } from '@components/index'
 import { Container } from './GroupsStyles'
 
+import { groupsGetAll } from '@storage/group/groupsGetAll'
+
 export function Groups() {
   const [groups, setGroups] = useState<string[]>(['Turma 1'])
   const navigation = useNavigation()
+
+  async function fetchGroups() {
+    try {
+      const data = await groupsGetAll()
+      setGroups(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useFocusEffect(
+    useCallback(() => {
+      fetchGroups()
+    }, [])
+  )
 
   function handleNavigateToNewGroup() {
     navigation.navigate('newGroup')
