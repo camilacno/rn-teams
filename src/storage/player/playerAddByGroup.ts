@@ -12,7 +12,6 @@ export async function playerAddByGroup(
 ) {
   try {
     const storedPlayers = await playersGetByGroup(group)
-
     const playerAlreadyExists = storedPlayers.filter(
       (player) => player.name === newPlayer.name
     )
@@ -22,7 +21,6 @@ export async function playerAddByGroup(
     }
 
     const storage = JSON.stringify([...storedPlayers, newPlayer])
-
     await AsyncStorage.setItem(`${PLAYER_COLLECTION}-${group}`, storage)
   } catch (error) {
     throw error
